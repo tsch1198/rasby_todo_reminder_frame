@@ -10,7 +10,7 @@ sudo apt-get install -y python-pip \
 cd ../
 
 echo "Installing python dependencies";
-python3 -m pip install virtualenv
+sudo apt install python3-virtualenv
 
 python3 -m virtualenv -p python3 env
 . env/bin/activate
@@ -27,8 +27,8 @@ sudo make
 sudo make check
 sudo make install
 
-wget https://project-downloads.drogon.net/wiringpi-latest.deb
-sudo dpkg -i wiringpi-latest.deb
+wget https://github.com/WiringPi/WiringPi/releases/download/3.10/wiringpi_3.10_arm64.deb
+sudo dpkg -i wiringpi_3.10_arm64.deb
 gpio -v
 
 echo "Cleaning up";
